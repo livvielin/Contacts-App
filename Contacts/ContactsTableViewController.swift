@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+class ContactsTableViewController: UITableViewController, ContactInputDelegate {
     
     // declaring elements
     struct ContactInfo {
@@ -72,6 +72,9 @@ class ContactsTableViewController: UITableViewController {
             theDestination.contactPhone = theSelectedRow.phoneNumber
             
         }
+        else if segue.identifier == "ToInput" {
+            (segue.destinationViewController as ContactInput).delegate = self
+        }
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -87,6 +90,13 @@ class ContactsTableViewController: UITableViewController {
         let fromContact = listOfContacts[sourceIndexPath.row]
         listOfContacts.removeAtIndex(sourceIndexPath.row)
         listOfContacts.insert(fromContact, atIndex: destinationIndexPath.row)
+    }
+    
+    func didUpdateContact(senderClass: AnyObject, aName: String, aPhoneNumber: String) {
+        var newContact = ContactInfo(name: aName, phoneNumber: aPhoneNumber)
+        listOfContacts.append(newContact)
+        
+        tableView.reloadData()
     }
 
     /*
