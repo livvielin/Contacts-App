@@ -14,6 +14,7 @@
 		D33E8C051A7AE3C100FAA798 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8C041A7AE3C100FAA798 /* ContactsTests.swift */; };
 		D33E8C0F1A7AE4ED00FAA798 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8C0E1A7AE4ED00FAA798 /* ContactsTableViewController.swift */; };
 		D33E8C591A7C77EF00FAA798 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8C581A7C77EF00FAA798 /* ContactDetails.swift */; };
+		D33E8C5B1A7C7D3F00FAA798 /* ContactInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8C5A1A7C7D3F00FAA798 /* ContactInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		D33E8C041A7AE3C100FAA798 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		D33E8C0E1A7AE4ED00FAA798 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		D33E8C581A7C77EF00FAA798 /* ContactDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
+		D33E8C5A1A7C7D3F00FAA798 /* ContactInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				D33E8BEE1A7AE3C100FAA798 /* AppDelegate.swift */,
 				D33E8BF21A7AE3C100FAA798 /* Main.storyboard */,
+				D33E8C5A1A7C7D3F00FAA798 /* ContactInput.swift */,
 				D33E8C581A7C77EF00FAA798 /* ContactDetails.swift */,
 				D33E8C0E1A7AE4ED00FAA798 /* ContactsTableViewController.swift */,
 				D33E8BF51A7AE3C100FAA798 /* Images.xcassets */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33E8BEF1A7AE3C100FAA798 /* AppDelegate.swift in Sources */,
+				D33E8C5B1A7C7D3F00FAA798 /* ContactInput.swift in Sources */,
 				D33E8C591A7C77EF00FAA798 /* ContactDetails.swift in Sources */,
 				D33E8C0F1A7AE4ED00FAA798 /* ContactsTableViewController.swift in Sources */,
 			);
