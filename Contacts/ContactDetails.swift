@@ -20,7 +20,8 @@ class ContactDetails: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        contactNameLabel.text = contactName
+        contactPhoneLabel.text = contactPhone
     }
 
     override func didReceiveMemoryWarning() {

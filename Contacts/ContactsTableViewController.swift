@@ -28,7 +28,7 @@ class ContactsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         listOfContacts.append(firstContact)
         listOfContacts.append(secondContact)
@@ -61,6 +61,33 @@ class ContactsTableViewController: UITableViewController {
     }
     
     // Passing details to detail View Controller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToDetail" {
+            
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let theSelectedRow = listOfContacts[indexPath!.row]
+            let theDestination = (segue.destinationViewController as ContactDetails)
+            
+            theDestination.contactName = theSelectedRow.name
+            theDestination.contactPhone = theSelectedRow.phoneNumber
+            
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            listOfContacts.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let fromContact = listOfContacts[sourceIndexPath.row]
+        listOfContacts.removeAtIndex(sourceIndexPath.row)
+        listOfContacts.insert(fromContact, atIndex: destinationIndexPath.row)
+    }
 
     /*
     // Override to support conditional editing of the table view.
